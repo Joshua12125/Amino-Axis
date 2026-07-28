@@ -38,34 +38,19 @@
   <!-- End Meta Pixel Code -->
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      height: 100%; overflow: hidden;
-    }
+    html, body { height: 100%; overflow: hidden; }
     body {
-      background: #152040;
-      color: #F0F6FF;
+      background: #152040; color: #F0F6FF;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 16px; line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
+      font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; position: relative;
     }
-    /* Soft ambient glow */
     body::after {
-      content: "";
-      position: fixed; inset: 0;
-      background:
-        radial-gradient(ellipse 50% 40% at 30% 20%, rgba(0,200,200,0.05) 0%, transparent 60%),
+      content: ""; position: fixed; inset: 0;
+      background: radial-gradient(ellipse 50% 40% at 30% 20%, rgba(0,200,200,0.05) 0%, transparent 60%),
         radial-gradient(ellipse 40% 40% at 75% 75%, rgba(255,61,139,0.04) 0%, transparent 60%);
       pointer-events: none; z-index: 0;
     }
-
-    /* ── VIALS scattered across full page ── */
-    .vial {
-      position: fixed;
-      pointer-events: none;
-      z-index: 1;
-      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.25));
-    }
+    .vial { position: fixed; pointer-events: none; z-index: 1; filter: drop-shadow(0 6px 16px rgba(0,0,0,0.25)); }
     .v1 { width: 110px; left: -15px; top: 2%; transform: rotate(-20deg); animation: f1 4.0s ease-in-out infinite; }
     .v2 { width: 140px; left: 18%; top: -4%; transform: rotate(8deg); animation: f2 3.5s ease-in-out infinite; }
     .v3 { width: 90px; right: -10px; top: 5%; transform: rotate(22deg); animation: f3 4.3s ease-in-out infinite; }
@@ -75,7 +60,6 @@
     .v7 { width: 120px; left: 8%; bottom: 2%; transform: rotate(-12deg); animation: f7 4.2s ease-in-out infinite; opacity: 0.5; }
     .v8 { width: 90px; right: 5%; bottom: 5%; transform: rotate(14deg); animation: f8 3.9s ease-in-out infinite; opacity: 0.4; }
     .v9 { width: 60px; left: 40%; bottom: 0%; transform: rotate(-25deg); animation: f9 4.6s ease-in-out infinite; opacity: 0.35; }
-
     @keyframes f1 { 0%,100%{transform:rotate(-20deg) translateY(0)}50%{transform:rotate(-20deg) translateY(-12px)} }
     @keyframes f2 { 0%,100%{transform:rotate(8deg) translateY(0)}50%{transform:rotate(8deg) translateY(-16px)} }
     @keyframes f3 { 0%,100%{transform:rotate(22deg) translateY(0)}50%{transform:rotate(22deg) translateY(-10px)} }
@@ -85,137 +69,40 @@
     @keyframes f7 { 0%,100%{transform:rotate(-12deg) translateY(0)}50%{transform:rotate(-12deg) translateY(-14px)} }
     @keyframes f8 { 0%,100%{transform:rotate(14deg) translateY(0)}50%{transform:rotate(14deg) translateY(-11px)} }
     @keyframes f9 { 0%,100%{transform:rotate(-25deg) translateY(0)}50%{transform:rotate(-25deg) translateY(-13px)} }
-
-    /* ── MAIN CONTENT ── */
-    .page {
-      position: relative; z-index: 10;
-      height: 100vh; width: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 20px;
-    }
-
-    /* Logo */
+    .page { position: relative; z-index: 10; height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
     .logo { margin-bottom: 24px; }
     .logo img { height: 48px; }
-
-    /* Card */
-    .card {
-      background: rgba(21,32,64,0.88);
-      backdrop-filter: blur(20px);
-      border: 1px solid #253860;
-      border-radius: 14px;
-      padding: 28px 24px 24px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
-      max-width: 440px; width: 100%;
-    }
-    .card h2 {
-      font-size: 19px; font-weight: 800;
-      color: #F0F6FF; margin-bottom: 8px;
-    }
-    .card p.desc {
-      font-size: 12.5px; color: #7B95C0;
-      line-height: 1.6; margin-bottom: 18px;
-    }
-    .check-group {
-      display: flex; flex-direction: column;
-      gap: 10px; margin-bottom: 18px;
-    }
-    .check-item {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 12px 14px;
-      background: #1a2d50;
-      border: 1.5px solid #253860;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
+    .card { background: rgba(21,32,64,0.88); backdrop-filter: blur(20px); border: 1px solid #253860; border-radius: 14px; padding: 28px 24px 24px; box-shadow: 0 8px 40px rgba(0,0,0,0.25); max-width: 440px; width: 100%; }
+    .card h2 { font-size: 19px; font-weight: 800; color: #F0F6FF; margin-bottom: 8px; }
+    .card p.desc { font-size: 12.5px; color: #7B95C0; line-height: 1.6; margin-bottom: 18px; }
+    .check-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+    .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; background: #1a2d50; border: 1.5px solid #253860; border-radius: 8px; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
     .check-item:hover { border-color: #3a5080; }
-    .check-item.checked {
-      border-color: #00C8C8;
-      background: rgba(0,200,200,0.06);
-    }
-    .check-item input[type="checkbox"] {
-      width: 20px; height: 20px; flex-shrink: 0;
-      margin-top: 1px; accent-color: #00C8C8; cursor: pointer;
-    }
-    .check-item span {
-      font-size: 13px; color: #8BA8D0; line-height: 1.45;
-    }
+    .check-item.checked { border-color: #00C8C8; background: rgba(0,200,200,0.06); }
+    .check-item input[type="checkbox"] { width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; accent-color: #00C8C8; cursor: pointer; }
+    .check-item span { font-size: 13px; color: #8BA8D0; line-height: 1.45; }
     .check-item strong { color: #F0F6FF; }
-
-    .btn-enter {
-      width: 100%; padding: 14px;
-      background: #253860; color: #4a6890;
-      border: none; border-radius: 8px;
-      font-size: 14px; font-weight: 700;
-      cursor: not-allowed;
-      transition: all 0.3s;
-      display: flex; align-items: center; justify-content: center;
-      gap: 8px;
-    }
-    .btn-enter.active {
-      background: linear-gradient(135deg, #00C8C8, #FF3D8B);
-      color: #fff; cursor: pointer;
-    }
+    .btn-enter { width: 100%; padding: 14px; background: #253860; color: #4a6890; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: not-allowed; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-enter.active { background: linear-gradient(135deg, #00C8C8, #FF3D8B); color: #fff; cursor: pointer; }
     .btn-enter.active:hover { opacity: 0.9; }
-
-    .disclaimer {
-      margin-top: 14px; font-size: 10.5px;
-      color: #4a6080; line-height: 1.55;
-    }
+    .disclaimer { margin-top: 14px; font-size: 10.5px; color: #4a6080; line-height: 1.55; }
     .disclaimer a { color: #00C8C8; text-decoration: underline; }
-
-    /* Bottom links */
-    .bottom-links {
-      margin-top: 16px;
-      text-align: center;
-    }
+    .bottom-links { margin-top: 16px; text-align: center; }
     .exit-link { font-size: 12px; color: #4a6080; }
     .exit-link a { color: #7B95C0; font-weight: 600; text-decoration: underline; }
-    .mini-footer {
-      margin-top: 8px;
-      font-size: 10px; color: #2a4060;
-    }
+    .mini-footer { margin-top: 8px; font-size: 10px; color: #2a4060; }
     .mini-footer a { color: #00AEAE; }
-
-    /* ── Mobile tweaks ── */
     @media (max-height: 700px) {
-      .card { padding: 22px 20px 20px; }
-      .card h2 { font-size: 17px; margin-bottom: 6px; }
-      .card p.desc { font-size: 11.5px; margin-bottom: 14px; }
-      .check-item { padding: 10px 12px; }
-      .check-item span { font-size: 12px; }
-      .btn-enter { padding: 12px; font-size: 13px; }
-      .disclaimer { font-size: 10px; margin-top: 10px; }
-      .logo { margin-bottom: 16px; }
-      .logo img { height: 40px; }
-      .bottom-links { margin-top: 10px; }
+      .card { padding: 22px 20px 20px; } .card h2 { font-size: 17px; margin-bottom: 6px; } .card p.desc { font-size: 11.5px; margin-bottom: 14px; }
+      .check-item { padding: 10px 12px; } .check-item span { font-size: 12px; } .btn-enter { padding: 12px; font-size: 13px; }
+      .disclaimer { font-size: 10px; margin-top: 10px; } .logo { margin-bottom: 16px; } .logo img { height: 40px; } .bottom-links { margin-top: 10px; }
     }
-    @media (max-height: 600px) {
-      .card p.desc { display: none; }
-      .check-group { gap: 8px; margin-bottom: 14px; }
-      .logo { margin-bottom: 12px; }
-      .logo img { height: 36px; }
-    }
-    @media (max-width: 480px) {
-      .v1 { width: 90px; }
-      .v2 { width: 110px; left: 15%; }
-      .v3 { width: 75px; }
-      .v4 { width: 55px; }
-      .v5 { width: 80px; }
-      .v6 { width: 65px; }
-      .v7 { width: 95px; }
-      .v8 { width: 70px; }
-      .v9 { width: 50px; }
-    }
+    @media (max-height: 600px) { .card p.desc { display: none; } .check-group { gap: 8px; margin-bottom: 14px; } .logo { margin-bottom: 12px; } .logo img { height: 36px; } }
+    @media (max-width: 480px) { .v1{width:90px} .v2{width:110px;left:15%} .v3{width:75px} .v4{width:55px} .v5{width:80px} .v6{width:65px} .v7{width:95px} .v8{width:70px} .v9{width:50px} }
   </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6CF975X"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-<!-- VIALS scattered across the entire page -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6CF975X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <img src="https://aminoaxis.com/vial-hero.png" alt="" class="vial v1"/>
 <img src="https://aminoaxis.com/vial-hero.png" alt="" class="vial v2"/>
 <img src="https://aminoaxis.com/vial-hero.png" alt="" class="vial v3"/>
@@ -225,13 +112,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <img src="https://aminoaxis.com/vial-hero.png" alt="" class="vial v7"/>
 <img src="https://aminoaxis.com/vial-hero.png" alt="" class="vial v8"/>
 <img src="https://aminoaxis.com/vial-hero.png" alt="" class="vial v9"/>
-
-<!-- MAIN CONTENT -->
 <div class="page">
-  <div class="logo">
-    <img src="https://aminoaxis.com/logo.png" alt="AminoAxis"/>
-  </div>
-
+  <div class="logo"><img src="https://aminoaxis.com/logo.png" alt="AminoAxis"/></div>
   <div class="card">
     <h2>Researcher Verification</h2>
     <p class="desc">AminoAxis sells research peptides exclusively to qualified researchers and laboratories for in vitro and laboratory use. Please confirm before continuing.</p>
@@ -245,20 +127,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span>I confirm I am a <strong>qualified researcher</strong> purchasing for <strong>in vitro / laboratory research</strong> only — not for human or veterinary use.</span>
       </div>
     </div>
-    <button class="btn-enter" id="enterBtn" onclick="handleEnter()">
-      Enter AminoAxis <span>&#8594;</span>
-    </button>
-    <div class="disclaimer">
-      By proceeding you affirm the statements above are true. Products are not for human or veterinary use, not for diagnostic procedures, and have not been evaluated by the FDA. <a href="https://aminoaxis.com/disclaimer" target="_blank">Full disclaimer</a>.
-    </div>
+    <button class="btn-enter" id="enterBtn" onclick="handleEnter()">Enter AminoAxis <span>&#8594;</span></button>
+    <div class="disclaimer">By proceeding you affirm the statements above are true. Products are not for human or veterinary use, not for diagnostic procedures, and have not been evaluated by the FDA. <a href="https://aminoaxis.com/disclaimer" target="_blank">Full disclaimer</a>.</div>
   </div>
-
   <div class="bottom-links">
     <div class="exit-link">Not a researcher? <a href="https://www.google.com">Exit</a></div>
     <div class="mini-footer"><a href="mailto:support@aminoaxis.com">support@aminoaxis.com</a> · &copy; 2026 AminoAxis</div>
   </div>
 </div>
-
 <script>
   function toggleCheck(label,cbId){
     var cb=document.getElementById(cbId);
@@ -280,6 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   function handleEnter(){
     if(!document.getElementById('cb1').checked||!document.getElementById('cb2').checked)return;
+    fbq('track', 'Lead');
     window.location.href='https://aminoaxis.com/catalog';
   }
 </script>
